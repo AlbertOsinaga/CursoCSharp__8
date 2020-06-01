@@ -1,0 +1,7 @@
+Maria 57
+Pedro 63
+Juan 79
+Elena 88
+Pablo 45
+Hugo 24
+Paola 93

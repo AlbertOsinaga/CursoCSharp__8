@@ -1,19 +1,27 @@
 ﻿#region Header
-using System; using static System.Console; using static System.Math; namespace CursoCSharp { 
+using System;
+using static System.IO.File;
+using static System.Console; using static System.Math; namespace CursoCSharp { 
 class Global { 
 #endregion    
 
-static void Main() => Iniciar();
-static void Iniciar() 
+static void Main(string[] args) => Iniciar(args);
+static void Iniciar(string[] args) 
 {
-      WriteLine("9 al cuadrado = " + Pow(9, 2));   // 81 
-      WriteLine("raiz cuadrada de 64 = " + Sqrt(64));   // 8
-      var seno = Sin(45.37);   
-      var max = Max(Floor(seno), Round(seno));  
-      WriteLine("Seno de 45.37 = " + seno);     // 0.9832851623027296
-      WriteLine("Mayor entre Floor y Round = " + max);  // 1
-      WriteLine("Valor absoluto de (56-94) = " + Abs(56 - 94));   // 38 
+      var archivo = args[0]; 
+      EscribirArchivo(archivo);
+      var texto = ReadAllText(archivo);
+      WriteLine(texto);
 }
+static void EscribirArchivo(string archivo) =>
+       WriteAllText(archivo, 
+       @"Maria 57
+Pedro 63
+Juan 79
+Elena 88
+Pablo 45
+Hugo 24
+Paola 93"); // verbose string
 
 #region Footer
 }}
